@@ -1,0 +1,24 @@
+body {  /*change the background color of the html page - if it's not yellow, it's not working */
+   background-color: #FCF3CF
+}
+
+img { /*shrink ALL images to a decent size (60% of their original) so that they don't take up too much space */
+  width: 60%;
+}
+
+ul { /* get rid of all the bullets - yuck */
+  list-style: none;
+  padding: 0;
+}
+
+#component {
+  display: flex;
+}
+
+.panel{
+  border: 3px solid darkgray;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  align-content: stretch;
+}

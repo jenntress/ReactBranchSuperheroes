@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--"ejs" is embedded javascript "server side rendering"-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>goodGuys.ejs</title> <!--title the page so that I can find it in my browser tabs-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!--"My" CSS comes after bootstrap to cascade-->
+  </head>
+  <body class="container">
+
+
+<h4>The goodGuys.ejs</h4>
+
+
+<div id="component">
+
+  <div v-for="hero in heroes" class="panel">
+    <h3>{{ hero.name }}</h3>
+    <img :src="hero.img"/>
+    <ul>
+      <li>{{ hero.alterEgo }}</li>
+      <li>{{ hero.superPower }}</li>
+      <li>{{ hero.universe }}</li>
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+<!--keep script at the end-->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="hero.js"></script> <!--link my javascript file from the same directory location-->
+
+      </body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "superheroes",
+  "version": "1.0.0",
+  "description": "A demo crud api using mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --no-deprecation --sort --colors --inline-diffs --bail",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenntress/superheros.git"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "superheroes"
+  ],
+  "author": "Jenn Turner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenntress/superheros/issues"
+  },
+  "homepage": "https://github.com/jenntress/superheros#readme",
+  "dependencies": {
+    "axios": "^0.16.0",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0"
+  }
+}
