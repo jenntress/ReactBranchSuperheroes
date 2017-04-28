@@ -15,26 +15,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/superheroes");//connects to our loca
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('public'));//tells express that all files inside the public folder are client-side "static code"
-
-app.set('view engine', 'ejs'); //telling node to use ejs "ejs middleware"
-app.set('views', path.join(__dirname, 'views'));//now telling node where the ejs is - and use this directory
-
-app.get('/', function(req, res){ //this forces localhost:3000 to print index.ejs (my homepage)
-  res.render('index')
+app.use(function(req, res, next){//this allows CORS - cuz hackers be hackin
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
-
-app.get('/heroes', function(req, res){ //when the browser gets 3000/heroes... is pulls the goodGuys.ejs
-  res.render('goodGuys');
-});
-
-app.get('/villains', function(req, res){ //when the browser gets 3000/bad... is pulls the badGuys.ejs
-  res.render('badGuys');
-});
-
-
-
-
 
 
 
@@ -45,7 +30,11 @@ app.get('/villains', function(req, res){ //when the browser gets 3000/bad... is 
 app.use('/api/superheroes', heroRoutes);//mount the endpoint
 app.use('/api/villains', villRoutes);//mount the endpoint
 
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/public/index.html'));
+});
+
 //Now we're building a little server
-var server = app.listen(3000, function(){// takes a port and a "function" to run
-  console.log('Server running HURRAY! on PORT 3000');
+var server = app.listen(3001, function(){// takes a port and a "function" to run
+  console.log('Node Server running HURRAY! on PORT 3001');
 });

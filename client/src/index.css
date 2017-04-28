@@ -1,0 +1,39 @@
+body {  /*change the background color of the html page - if it's not yellow, it's not working */
+   background-color: #FCF3CF;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+
+img { /*shrink ALL images to a decent size (60% of their original) so that they don't take up too much space */
+  width: 60%;
+}
+
+ul { /* get rid of all the bullets - yuck */
+  list-style: none;
+  padding: 0;
+}
+
+#BoxOfItems {
+  display: flex;
+}
+
+.nav-flex {
+  margin: 10px;
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  background-color: gray;
+}
+
+.nav-flex li {
+  padding: 10px;
+}
+
+.panel{
+  border: 3px solid darkgray;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  align-content: stretch;
+}

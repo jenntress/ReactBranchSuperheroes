@@ -1,0 +1,2 @@
+--exec cd client && npm start
+--exec node server.js
