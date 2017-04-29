@@ -4,7 +4,7 @@ TO START
 - (new tab) cd into client, npm start
 SUCCESS POINT "We set ourself up to do development on our fullstack app"
 - (postman) Your data will be in postman in 3001
-- (browser) Your api will be in browser at 3000 client using the src/App.js
+- (browser) Your api will be in browser at 3000 client 
 
 
 GENERAL NOTES
