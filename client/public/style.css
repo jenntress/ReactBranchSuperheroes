@@ -11,14 +11,11 @@ ul { /* get rid of all the bullets - yuck */
   padding: 0;
 }
 
-#component {
-  display: flex;
-}
-
 .panel{
   border: 3px solid darkgray;
   width: 50%;
   margin: 10px;
   text-align: center;
   align-content: stretch;
+  padding: 5px;
 }

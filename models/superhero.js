@@ -8,6 +8,8 @@ var SuperheroSchema = new mongoose.Schema({
     evil: {default: false, type: Boolean},
     rank: Number,
     alterEgo: String,
+    weakness: String,
+    nemesis: String,
     img: String
 });
 
@@ -17,6 +19,8 @@ SuperheroSchema.methods.loadData = function(data){
   this.universe = data.universe ? data.universe : this.universe;
   this.rank     = data.rank ? data.rank : this.rank;
   this.evil     = data.evil ? data.evil : this.evil;
+  this.nemesis  = data.nemesis ? data.nemesis : this.nemesis;
+  this.weakness = data.weakness ? data.weakness : this.weakness;
   this.alterEgo = data.alterEgo ? data.alterEgo : this.alterEgo;
   this.img      = data.img ? data.img : this.img;
 }

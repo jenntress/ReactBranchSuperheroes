@@ -6,7 +6,10 @@ const HeroesList = (props) => (
     <div className="panel" key={ index }>
       <h2>{ item.name }</h2>
       <h3>{ item.alterEgo }</h3>
-      <h4>Known for: { item.superPower }</h4>
+      <p>Strengths: { item.superPowers.length ? item.superPowers.join(", ") : '' }</p>
+      <p>Weakness: { item.weakness }</p>
+      <p>Nemesis: { item.nemesis }</p>
+      <p>{ item.universe }</p>
       <img alt="" src={ item.img }/>
     </div>
   ))}
