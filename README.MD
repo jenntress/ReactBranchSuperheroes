@@ -7,7 +7,8 @@ TO START "Set ourself up to do development on our fullstack app"
 
 NEED TO FIX
 - Clean up superheroes database items (fill all keys with values)
-- CSS: nav bar, welcome tagline/text,
+- Style the CSS nav bar, BoxOfItems, panel
+- Add a welcome tagline/text to the HomeContainer
 - Add a featured villain/superhero (random - shows up on homepage)
 - Replace batman and jean grey with anakin skywalker and gandalf
 - Get a new favicon
@@ -23,13 +24,12 @@ SUMMARY OF CHANGES (AS OF 5/1/17)
 POSTMAN HOW TO
 - GET: use url http://localhost:3001/api/villains/ or superheroes
 - POST: select Body at the top, and x-www.form-urlencoded
-- POST multiple powers: multiple lines of evilPower "NO COMMAS!"
+- POST multiple powers: multiple lines(inputs) of evilPower "doesn't work csv!"
 - PUT:
 - POST in JSON with async.each:
   -  "async.each" doing a bunch of things at once.. asynchronously (good for batching). async for each thing in this array of data, for each item in the array the function will execute. Must tell async when to quit - use "cb" - put it with whatever results I want once I've completed that action.
   - In postman, http://localhost:3000/api/superheroes/multiple-superPowers Go to POST, then Body, then "raw", then text dropdown to JSON, then type:
     {"data":[{ "name": "superman"},{ "name": "uberman" },{ "name": "loserman" }]}
-
 
 GENERAL NOTES
 - Everything in client is a "React Application" that is completely separate thing from our code.
