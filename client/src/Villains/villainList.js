@@ -1,9 +1,9 @@
 import React from 'react';
 
 const VillainsList = (props) => (
-  <div id="BoxOfItems">
+  <div id="items-box">
   { props.villains.map((item, index) => (
-    <div className="panel" key={ index }>
+    <div className="jpanel" key={ index }>
       <h2>{ item.name }</h2>
       <h3>{ item.alterEgo }</h3>
       <p>Strengths: { item.evilPowers.length ? item.evilPowers.join(", ") : '' }</p>

@@ -5,21 +5,21 @@ TO START "Set ourself up to do development on our fullstack app"
 - (postman) Your data will be in postman in 3001
 - (browser) Your api will be in browser at 3000 client
 
+SUMMARY OF CHANGES (AS OF 5/3/17)
+- Added edit hero button to HeroesList
+- Installed boostrap CSS
+- Updated CSS <Link> renders HTML, it's not actually HTML
+- Added function for all the rest of the keys to the post-new-hero page
+- Installed Chrome addon for React
+
 NEED TO FIX
+- Get the villains edit to work
 - Clean up superheroes database items (fill all keys with values)
 - Style the CSS nav bar, BoxOfItems, panel
 - Add a welcome tagline/text to the HomeContainer
 - Add a featured villain/superhero (random - shows up on homepage)
 - Replace batman and jean grey with anakin skywalker and gandalf
 - Get a new favicon
-
-SUMMARY OF CHANGES (AS OF 5/1/17)
-- Added weakenss to both superheroes & villains
-- Cleaned up villain database
-- Added nemesis to superheroes
-- Moved async notes to this ReadMe
-- Cleaned up CSS
-- Changed index.html's title
 
 POSTMAN HOW TO
 - GET: use url http://localhost:3001/api/villains/ or superheroes

@@ -7,7 +7,9 @@ import HeroesContainer from './Heroes/HeroesContainer';
 import PostHeroesContainer from './Heroes/PostHeroesContainer';
 import VillainsContainer from './Villains/VillainsContainer';
 import PostVillainsContainer from './Villains/PostVillainsContainer';
+import EditHeroContainer from './Heroes/EditHeroContainer';
 import './index.css';
+require('bootstrap/dist/css/bootstrap.css');
 
 
 ReactDOM.render(
@@ -17,6 +19,7 @@ ReactDOM.render(
      <Route path="/home" component={ Home }/>
      <Route path="/heroes" component={ HeroesContainer }/>
      <Route path="/post" component={ PostHeroesContainer }/>
+     <Route path="/heroes/edit/:heroId" component={ EditHeroContainer }/>
      <Route path="/Villains" component={ VillainsContainer }/>
      <Route path="/postvill" component={ PostVillainsContainer }/>
    </Route>

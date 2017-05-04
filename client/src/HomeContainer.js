@@ -4,7 +4,8 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Hello, from the HomeContainer.js</h1>
+        <h1>Ultimate Superhero Database</h1>
+        <p>Hello, from the HomeContainer.js</p>
       </div>
     )
   }

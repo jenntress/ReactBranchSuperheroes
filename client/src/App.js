@@ -4,7 +4,7 @@ import NavigationBar from './NavBarr';
 class App extends Component {
   render(){
     return (
-      <div>
+      <div className="jumbotron">
       <NavigationBar />
         { this.props.children }
       </div>

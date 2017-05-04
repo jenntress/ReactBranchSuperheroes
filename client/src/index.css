@@ -4,30 +4,42 @@ body {  /*change the background color of the html page - if it's not yellow, it'
    padding: 0;
    font-family: "Raleway", sans-serif;
 }
-
 img { /*shrink ALL images to a decent size (60% of their original) so that they don't take up too much space */
   width: 60%;
 }
-
 ul { /* get rid of all the bullets - yuck */
   list-style: none;
   padding: 0;
 }
 
+/********items, panel for supers/vills ********/
 
-#BoxOfItems {
+#items-box { /*container holding every hero/villain box */
   display: flex;
 }
 
-.nav-flex {
+div.jpanel {
+  border: 3px solid darkgray;
+  width: 50%;
+  height: 50%;
+  margin: 10px;
+  text-align: center;
+  align-content: stretch;
+  background-color: pink;
+}
+
+
+
+/********NavBarr CSS *********/
+.nav-flex {/*entire nav box*/
   margin: 10px;
   padding: 5px;
   width: 100%;
   display: flex;
+  align-content: stretch;
   background-color: #F8F8E1;
 }
-
-.linker {
+.nav-flex a {/*the links in my navbarr*/
   margin: 5px;
   border-radius: 15px 50px;
   background: gold;
@@ -37,15 +49,4 @@ ul { /* get rid of all the bullets - yuck */
   text-decoration-style: wavy;
   text-decoration: none;
   color: black;
-}
-
-
-
-.panel{
-  border: 3px solid darkgray;
-  width: 50%;
-  margin: 10px;
-  text-align: center;
-  align-content: stretch;
-  background-color: #F8F8E1;
 }
