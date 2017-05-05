@@ -5,15 +5,19 @@ TO START "Set ourself up to do development on our fullstack app"
 - (postman) Your data will be in postman in 3001
 - (browser) Your api will be in browser at 3000 client
 
-SUMMARY OF CHANGES (AS OF 5/3/17)
-- Added edit hero button to HeroesList
-- Installed boostrap CSS
-- Updated CSS <Link> renders HTML, it's not actually HTML
-- Added function for all the rest of the keys to the post-new-hero page
-- Installed Chrome addon for React
+SUMMARY OF CHANGES (AS OF 5/4/17)
+- Added edit Heroes
+- Fixed broken route in superheroes.js (wasn't calling by id)
 
-NEED TO FIX
+HOMEWORK
+- Add a delete button next to the edit button on each superhero
 - Get the villains edit to work
+
+CRITICAL ITEMS TO FIX
+- Add the rest of the fields in the EditHeroForm/Container
+- Debug the superPowers functions (check CamelCase on ALL js files)
+
+TRIVIAL ITEMS TO FIX
 - Clean up superheroes database items (fill all keys with values)
 - Style the CSS nav bar, BoxOfItems, panel
 - Add a welcome tagline/text to the HomeContainer

@@ -19,7 +19,7 @@ Router.route('/')
  });
 
  //****** GET by ID *****
- Router.route('/superhero_id')
+ Router.route('/:superhero_id')
   .get(function(req, res){
     Superhero.findById(req.params.superhero_id, function(err, data){
       if(err){
@@ -29,6 +29,7 @@ Router.route('/')
       }
     });
   });
+
 //****** POST ********
 Router.route('/')
  .post(function(req,res){
