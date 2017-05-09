@@ -64,7 +64,6 @@ class PostContainer extends Component { //keeps track of all of our state (stuff
            updateAlterEgo={this.updateAlterEgo}
            updateImg={this.updateImg}
         />
-        <p>Hello, from the PostHeroesContainer.js</p>
       </div>
     )
   }

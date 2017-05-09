@@ -1,27 +1,30 @@
 TO START "Set ourself up to do development on our fullstack app"
-- (cmdr) start mongod
-- (new tab) connect to mongo, ctrl + c, cd into main directory, nodemon
-- (new tab) cd into client, npm start
-- (postman) Your data will be in postman in 3001
-- (browser) Your api will be in browser at 3000 client
+1. (cmdr) start mongod
+2. (new tab) connect to mongo, ctrl + c, cd into main directory, nodemon
+3. (new tab) cd into client, npm start
+4. (postman) Your data will be in postman in 3001
+5. (browser) Your client api will be in browser at localhost 3000
 
-SUMMARY OF CHANGES (AS OF 5/4/17)
-- Added edit Heroes
-- Fixed broken route in superheroes.js (wasn't calling by id)
+SUMMARY OF CHANGES (AS OF 5/8/17)
+- Add the rest of the fields in the EditHeroForm/Container
+- Updated a few superheros in the database
+- Added CSS float to EditHeroForm for image
 
-HOMEWORK
+CRITICAL ITEMS TO FIX & HOMEWORK
+- Debug the superPowers route? - every edit adds a null power
+- Debug superPowers on client side - can't enter text in input box
 - Add a delete button next to the edit button on each superhero
 - Get the villains edit to work
 
-CRITICAL ITEMS TO FIX
-- Add the rest of the fields in the EditHeroForm/Container
-- Debug the superPowers functions (check CamelCase on ALL js files)
+HOW DO I...
+- Make the nemesis a link to the villain
+- Add a featured villain/superhero (random - shows up on homepage)
+- Refresh the page after an edit/PUT on submit
 
 TRIVIAL ITEMS TO FIX
 - Clean up superheroes database items (fill all keys with values)
 - Style the CSS nav bar, BoxOfItems, panel
 - Add a welcome tagline/text to the HomeContainer
-- Add a featured villain/superhero (random - shows up on homepage)
 - Replace batman and jean grey with anakin skywalker and gandalf
 - Get a new favicon
 

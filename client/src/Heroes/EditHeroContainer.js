@@ -3,12 +3,16 @@ import $ from 'jquery';
 import EditHeroForm from './EditHeroForm';
 
 
-
 class EditHeroContainer extends Component {
   state = {
     isFetching: true,
     newPower: undefined, //from the function down below
-    name: undefined
+    name: undefined,
+    universe: undefined,
+    nemesis: undefined,
+    weakness: undefined,
+    alterEgo: undefined,
+    img: undefined
   }
 
 updateField = this.updateField.bind(this);
@@ -26,9 +30,14 @@ loadHeroes() {
     url:`/api/superheroes/${this.props.params.heroId}`,
     method: 'GET'
   }).done(response => {
-    console.log(response, "SUPER HERO NAME");
+    console.log(response, "CURRENT HERO DATA");
     this.setState({
       name: response.name,
+      universe: response.universe,
+      nemesis: response.nemesis,
+      weakness: response.weakness,
+      alterEgo: response.alterEgo,
+      img: response.img,
       superPowers: response.superPowers,
       isFetching: false
     });
@@ -38,46 +47,48 @@ loadHeroes() {
 handleSubmit(event){
     event.preventDefault();
   const data = {
-    name: this.state.name
+    name: this.state.name,
+    universe: this.state.universe,
+    nemesis: this.state.nemesis,
+    weakness: this.state.weakness,
+    alterEgo: this.state.alterEgo,
+    img: this.state.img
   }
-  console.log("HERE IS THE DATA TO EDIT", data)
+//  console.log("HERE IS THE DATA TO EDIT", data)
   //****This is the PUT ajax******
   $.ajax({
     url: `/api/superheroes/${this.props.params.heroId}`,
     method: 'PUT',
     data: data
   }).done(response => {
-      console.log(response);
-  })
+//      console.log(response);
+    })
 }
 
-//we don't want this thing to submit on loadHeroes.
-updatePowers(event){
-  event.preventDefault();
-  const tempArray = [];
-  tempArray.push(this.state.newPower)//we're pushing in a new power
-  this.setState({ superPowers: tempArray });
-  this.setState({ newPower: '' })//setting a new string
-  console.log(this.state.superPowers);
-}
+//****Add and remove a single superpower*****
+  //we don't want this thing to submit on loadHeroes.
+  updatePowers(event){
+    event.preventDefault();
+    const tempArray = [];
+    tempArray.push(this.state.newPower)//we're pushing in a new power
+    this.setState({ superPowers: tempArray });
+    this.setState({ newPower: '' })//setting a new string
+    console.log(this.state.superPowers);
+  }
 
-//we're gonna remove a single power
-removePower(event){
-   event.preventDefault();
-   let tempArray = this.state.superPowers;
-   tempArray = tempArray.length > 0 ? tempArray.splice(-1) : tempArray;
-   console.log('tempArray', tempArray)//to make sure our slice worked
-   this.setState({ superPowers: tempArray })
-   console.log(this.state.superPowers);
-}
-
-
-
+  //this removes a single power
+  removePower(event){
+     event.preventDefault();
+     let tempArray = this.state.superPowers;
+     tempArray = tempArray.length > 0 ? tempArray.splice(-1) : tempArray;
+     console.log('tempArray', tempArray)//to make sure our slice worked
+     this.setState({ superPowers: tempArray })
+     console.log(this.state.superPowers);
+  }
 
   render() {
     return (
       <div>
-        <h3>{ this.props.params.heroId }</h3>
         { !this.state.isFetching ?
           <EditHeroForm
             handleSubmit={this.handleSubmit}
@@ -85,9 +96,14 @@ removePower(event){
             superPowers={this.state.superPowers}
             updatePowers={() => this.updatePowers()}
             removePower={() => this.removePower()}
-            name={ this.state.name } /> :<h3>Still Thinking...</h3>
+            name={this.state.name}
+            universe={this.state.universe}
+            nemesis={this.state.nemesis}
+            weakness={this.state.weakness}
+            alterEgo={this.state.alterEgo}
+            img={this.state.img}
+            /> : <h3>Loading...</h3>
         }
-        <p>Hello, from the EditHeroContainer.js</p>
       </div>
     )
   }

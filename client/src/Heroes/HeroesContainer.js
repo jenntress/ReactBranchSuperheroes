@@ -19,7 +19,7 @@ loadHeroes(){ // create a fucntion() that gets heroes from DB
     method: 'GET'
   }).done((response) => {
       this.setState({ heroes: response })
-    console.log(response); //this is our actual array of heroes (data itself was just an object)
+//    console.log(response); //this is our actual array of heroes (data itself was just an object)
   })
 }
 

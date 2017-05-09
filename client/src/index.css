@@ -18,16 +18,30 @@ ul { /* get rid of all the bullets - yuck */
   display: flex;
 }
 
-div.jpanel {
+div.each-person {
   border: 3px solid darkgray;
   width: 50%;
   height: 50%;
   margin: 10px;
   text-align: center;
   align-content: stretch;
-  background-color: pink;
+  background-color: lightgray;
 }
 
+img.EditHeroDefaultImg {
+  border: 2px solid #CCCCCC;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  float: right;
+  margin: 0 25px 0 5px;
+  padding: 5px 0 0;
+  width: 30%;
+}
+
+form.edit-form {
+  float:left;
+  width: 50%;
+}
 
 
 /********NavBarr CSS *********/
