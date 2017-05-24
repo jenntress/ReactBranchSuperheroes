@@ -15,6 +15,15 @@ const HeroesList = (props) => (
       <br />
       <Link className="btn btn-success" to={`/heroes/edit/${item._id}`}>Edit</Link>
       <Link className="btn btn-danger" to={`/heroes/delete/${item._id}`}>Delete</Link>
+
+     <form>
+      <div>
+        <button className="btn btn-success" type="button" onClick={ (event) => props.submitNote(event, item._id)}>Add</button>
+        <label>Hero Note</label>
+        <input type="text" onChange={ (event) => props.updateText(event)}/>
+
+       </div>
+      </form>
     </div>
   ))}
  </div>

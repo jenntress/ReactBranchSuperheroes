@@ -1,34 +1,55 @@
 //********************SUPERHEROES***********************************
 //This file is used for refactoring.
 
-var express = require('express');
-var Router  = express.Router();
+var express   = require('express');
+var Router    = express.Router();
 var Superhero = require('../models/superhero');
-
+var Note      = require('../models/note');
+var async     = require('async');
 
 //******* GET ********
 Router.route('/')
- .get(function(req,res){
-   Superhero.find(function(err,data){
-     if(err){
-       console.log("you have an error!");
-     }else {
-       res.json(data);
-     }
-   });
+ .get((req,res) => {
+   Superhero.find()
+     .populate('notes')
+     .exec((err, data) => {
+       if(err) throw err;
+       res.send({data})
+     })
  });
 
  //****** GET by ID *****
  Router.route('/:superhero_id')
-  .get(function(req, res){
-    Superhero.findById(req.params.superhero_id, function(err, data){
+  .get((req, res) => {
+    Superhero.findById(req.params.superhero_id)
+      .populate('notes') // added this so we can see the notes that we added to individual hero
+      .exec((err, data) =>{
       if(err){
-        console.log(err);
+        res.send(err);
       }else{
         res.json(data);
       }
     });
   });
+
+//******* GET by ID - notes *****
+//route JUST for posting notes. find a specfici hero. make a note. add new note to hero.
+Router.route('/note/:superhero_id')
+  .post((req, res) => {
+    Superhero.findById(req.params.superhero_id, (err, hero) => {//hero passes down below to .note.push and .save
+     if(err) throw err;
+     const newNote = new Note(); //need to create/save a note to get an Id
+     newNote.loadData(req.body); //there's the load method we defined earlier
+     newNote.save((err, savedNote) => { //change the name of the note AFTER save
+       if(err) throw err;
+       hero.notes.push(savedNote);//if we pass this a note object, it will go for THAT Id
+       hero.save((err, savedHero) => { //created this "new saved hero" in this function
+         if(err) throw err;
+         res.send({date: savedHero})
+       })
+     })
+    })
+  })
 
 //****** POST ********
 Router.route('/')
@@ -64,7 +85,6 @@ Router.route('/')
           res.json(newHeroes);
         });
     });
-
 //****** PUT *******
 Router.route('/:superhero_id')
  .put(function(req, res){
@@ -93,4 +113,4 @@ Router.route('/:superhero_id')
    });
  });
 
- module.exports = Router;
+module.exports = Router;

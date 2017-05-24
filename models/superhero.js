@@ -1,16 +1,17 @@
-//mongoose model
+//mongoose model "abstract datatype" representation of something you're modeling (not an integer or number or string - it's a datatype) created by the programmer
 var mongoose = require('mongoose');
 
 var SuperheroSchema = new mongoose.Schema({
     name: { required: true, type: String },
     superPowers: [{ type: String }],
     universe: String,
-    evil: {default: false, type: Boolean},
+    evil: { default: false, type: Boolean },
     rank: Number,
     alterEgo: String,
     weakness: String,
     nemesis: String,
-    img: String
+    img: String,
+    notes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Note' }]
 });
 
 //use this to update our superhero (if we don't want to update a particular field, it will default to what's already there.)
