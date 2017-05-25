@@ -11,6 +11,7 @@ PLAN FOR TONIGHT
 
 HOMEWORK
 - show list of notes (no more needed ajax calls - we already have our data, now we're just trying to display it)
+- need a notes container to hold the state for a specific note
 
 CRITICAL ITEMS TO FIX
 - Debug the superPowers route? - every edit adds a null power
@@ -20,7 +21,7 @@ CRITICAL ITEMS TO FIX
 
 THINGS TO FIX LATER
 - Clean up superheroes database items (fill all keys with values)
-- Style the CSS nav bar, BoxOfItems, panel
+- Style the CSS nav bar, BoxOfItems, panel, notes-container
 - Add a welcome tagline/text to the HomeContainer
 - Replace batman and jean grey with anakin skywalker and gandalf
 - Make the nemesis a link to the villain
@@ -47,9 +48,9 @@ GENERAL NOTES
 - This doesn't work yet: ...We're gonna create a command that starts both of our apps at the same time and blends them together a little bit so that it seems like it's only one app running - but remember it's two! To start both apps at once run 'npm run dev' (this command has been created in our node package.json)...
 
 SUMMARY OF CHANGES
-(AS OF 5/23/17)
-- added notes route
-(AS OF 5/8/17)
-- Add the rest of the fields in the EditHeroForm/Container
-- Updated a few superheros in the database
-- Added CSS float to EditHeroForm for image
+- (AS OF 5/23/17)
+ - added notes route
+- (AS OF 5/8/17)  
+ - Add the rest of the fields in the EditHeroForm/Container
+ - Updated a few superheros in the database
+ - Added CSS float to EditHeroForm for image
